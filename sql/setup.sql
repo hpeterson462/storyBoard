@@ -16,5 +16,6 @@ CREATE TABLE project (
   point_four TEXT,
   point_five TEXT,
   point_six TEXT,
-  point_seven TEXT
+  point_seven TEXT,
+  owner_id BIGINT NOT NULL REFERENCES users(id),
 );
