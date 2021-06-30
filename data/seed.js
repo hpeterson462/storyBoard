@@ -1,4 +1,5 @@
 const Project = require('../lib/models/Project');
+const User = require('../lib/models/User');
 const projectData = require('../data/projectData');
 
 const seed = async () => {

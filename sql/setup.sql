@@ -1,13 +1,13 @@
 DROP TABLE IF EXISTS users CASCADE;
-DROP TABLE IF EXISTS project CASCADE;
+DROP TABLE IF EXISTS projects;
 
 CREATE TABLE users (
   id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
-  email TEXT NOT NULL,
+  email TEXT NOT NULL UNIQUE,
   password_hash TEXT NOT NULL
 );
 
-CREATE TABLE project (
+CREATE TABLE projects (
   id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
   title TEXT NOT NULL,
   point_one TEXT,
@@ -16,6 +16,5 @@ CREATE TABLE project (
   point_four TEXT,
   point_five TEXT,
   point_six TEXT,
-  point_seven TEXT,
-  owner_id BIGINT NOT NULL REFERENCES users(id),
+  point_seven TEXT
 );
